@@ -1,14 +1,19 @@
 package controller;
 
 import org.springframework.stereotype.Component;
+import services.GreetingService;
 
 @Component
 public class MyController {
 
-    public String sayHello() {
-        System.out.println("Hello World");
+    private final GreetingService greetingService;
 
-        return "Hi folks";
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    public String sayHello() {
+        return greetingService.sayGreetings();
     }
 
 

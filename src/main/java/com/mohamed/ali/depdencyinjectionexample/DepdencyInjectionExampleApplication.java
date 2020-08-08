@@ -18,8 +18,7 @@ public class DepdencyInjectionExampleApplication {
 
 		// gets instances from the context
 		MyController myController = (MyController) ctx.getBean("myController");
-		String greeting = myController.sayHello();
-		System.out.println(greeting);
+		System.out.println(myController.sayHello());
 
 		// PropertyInjected
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
